@@ -25,19 +25,29 @@ class SinglyLinkedList {
   }
   pop() {
     if (!this.head) return undefined;
+    // start both current and new tail at the start
+    // on the while loop, these keep moving until they hit
+    // the second to last node, and new tail stays there
     let current = this.head;
     let newTail = current;
+    // loop through until you get to the last node with a node next
+    // (second to last item)
     while (current.next) {
+      // make the second to last node the new tail
       newTail = current;
+      // change current to the last node (the one to be removed)
       current = current.next;
     }
+    // update the tail
     this.tail = newTail;
+    // change the end node to null
     this.tail.next = null;
     this.length--;
     if (this.length === 0) {
       this.head = null;
       this.tail = null;
     }
+    // remove the end node
     return current;
   }
   shift() {
