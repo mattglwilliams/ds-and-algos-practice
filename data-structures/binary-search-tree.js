@@ -66,7 +66,7 @@ class BinarySearchTree {
     return false;
   }
   BFS() {
-    var node = this.root,
+    let node = this.root,
       data = [],
       queue = [];
     queue.push(node);
@@ -80,7 +80,7 @@ class BinarySearchTree {
     return data;
   }
   DFSPreOrder() {
-    var data = [];
+    let data = [];
     function traverse(node) {
       data.push(node.value);
       if (node.left) traverse(node.left);
@@ -90,7 +90,7 @@ class BinarySearchTree {
     return data;
   }
   DFSPostOrder() {
-    var data = [];
+    let data = [];
     function traverse(node) {
       if (node.left) traverse(node.left);
       if (node.right) traverse(node.right);
@@ -100,7 +100,7 @@ class BinarySearchTree {
     return data;
   }
   DFSInOrder() {
-    var data = [];
+    let data = [];
     function traverse(node) {
       if (node.left) traverse(node.left);
       data.push(node.value);
